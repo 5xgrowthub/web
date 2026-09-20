@@ -83,19 +83,28 @@ footer .fine{max-width:80ch;margin:28px auto 0;font-size:.85rem;color:#5a3b3b}
     </div>
 
 <script>
-    function getValidNumber() {
-        const input = document.getElementById("numInput").value.trim();
-        const num = parseInt(input);
-        if (!/^\d+$/.test(input) || isNaN(num) || num <= 1000) {
-            alert("Can't process. Minimum 1000 INR is required for investment.");
-            return null;
-        }
-        return num;
+  function getValidNumber() {
+    const input = document.getElementById("numInput").value.trim();
+    const num = parseInt(input);
+    if (!/^\d+$/.test(input) || isNaN(num) || num < 1000) {
+      alert("Can't process. Minimum 1000 INR is required for investment.");
+      return null;
     }
+    return num;
+  }
 
-    function multiply() {
-        const input = document.getElementById("numInput").value.trim();
-        const num = parseInt(input);
-        const outputDiv = document.getElementById(num*5);
-  </div></section></main><footer><p>Mail to: <a href="5xgrowthub@gmail.com">5xgrowthub@gmail.com</a></p><p>Contact no.: +918274849568 </p>
-</script></body></html>
+  function multiply() {
+    const num = getValidNumber();
+    if (num === null) return;
+    
+    // Target the output div and display the calculation (5x growth)
+    const outputDiv = document.getElementById("output");
+    outputDiv.textContent = "Expected Return: " + (num * 5) + " INR";
+  }
+</script>
+
+<footer>
+  <p>Mail to: <a href="mailto:5xgrowthub@gmail.com">5xgrowthub@gmail.com</a></p>
+  <p>Contact no.: +918274849568</p>
+</footer>
+</body></html>
