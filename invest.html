@@ -99,6 +99,41 @@
       font-weight: bold;
       color: var(--ink);
     }
+    .upload-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-section label {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.upload-section input[type="file"] {
+  font-size: 0.85rem;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+}
+
+.upload-section button {
+  background: var(--maroon);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.upload-section button:hover {
+  filter: brightness(1.1);
+}
 
     footer { background: var(--beige); padding: 56px 5vw; text-align: center; color: var(--ink); }
     footer p { margin: 6px 0; }
@@ -141,6 +176,11 @@
           </div>
           <div class="output" id="output"></div>
         </div>
+        <div class="upload-section">
+    <label for="payment-proof"><strong>Upload Payment Screenshot:</strong></label>
+    <input type="file" id="payment-proof" name="payment-proof" accept="image/*" required />
+    <button type="button" onclick="submitPayment()">Submit Proof</button>
+  </div>
       </div>
     </section>
   </main>
@@ -167,6 +207,14 @@
       const outputDiv = document.getElementById("output");
       outputDiv.textContent = "Expected Return: " + (num * 5) + " INR";
     }
+    function submitPayment() {
+  const fileInput = document.getElementById("payment-proof");
+  if (!fileInput.files || fileInput.files.length === 0) {
+    alert("Please select a screenshot file before submitting.");
+    return;
+  }
+  alert("Payment proof selected: " + fileInput.files[0].name);
+}
   </script>
 </body>
 </html>
