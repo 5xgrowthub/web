@@ -7,157 +7,216 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
   <style>
     :root {
-      --beige: #dfe0da;
-      --maroon: #800000;
-      --ink: #2d0000;
-      --navy: #24344f;
-      --dark: #2b2a2a;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: Roboto, Arial, sans-serif; color: var(--ink); background: #fff; line-height: 1.5; }
-    a { color: inherit; }
-    :focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
-    header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; padding: 20px 5vw; }
-    .logo { font-size: 1.5rem; text-decoration: none; }
-    nav { display: flex; gap: 24px; flex-wrap: wrap; }
-    nav a { text-decoration: none; font-size: .95rem; }
-    nav a:hover, nav a[aria-current] { text-decoration: underline; }
-    .maroon { background: var(--ink); color: #fff; }
-    main section { padding: 56px 5vw 88px; }
-    h1, h2 { font-weight: 400; line-height: 1.05; margin: 0 0 20px; }
-    h1 { font-size: clamp(2.4rem, 7vw, 5rem); }
-    .lead { max-width: 60ch; font-size: 1.1rem; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-top: 40px; max-width: 1000px; }
-    .steps div { border-top: 2px solid #fff; padding-top: 14px; }
-    .steps b { display: block; margin-bottom: 6px; font-size: 1.1rem; }
-    
-    /* Layout layout container */
-    .invest-content {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: flex-start;
-      margin-top: 36px;
-    }
-    .qr-image {
-      max-width: 320px;
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    /* Right-aligned calculator box */
-    .container {
-      flex: 1;
-      min-width: 280px;
-      max-width: 480px;
-      padding: 24px;
-      border: 1px solid #444;
-      border-radius: 12px;
-      background-color: #ffffff;
-      color: var(--ink);
-      margin-right: auto; /* Moves the container to the right */
-    }
-    .container h2 {
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-    .container label {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: #333;
-    }
-    .container input {
-      padding: 10px 14px;
-      width: 100%;
-      border: 1px solid var(--maroon);
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
-    .container button {
-      padding: 10px 20px;
-      background: var(--navy);
-      color: #fff;
-      border: none;
-      border-radius: 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .container button:hover {
-      filter: brightness(1.2);
-    }
-    .output {
-      margin-top: 15px;
-      padding: 12px;
-      background: #f4f4f4;
-      border-radius: 6px;
-      min-height: 20px;
-      font-weight: bold;
-      color: var(--ink);
-    }
-    
-upload-section {
-  min-width: 280px;
-      max-width: 400px;
-      padding: 24px;
-      border: 1px solid #444;
-      border-radius: 12px;
-      background-color: #ffffff;
-      color: var(--ink);
-      margin-right: auto;
-      margin-top: 20px;
-  
+  --beige: #dfe0da;
+  --maroon: #800000;
+  --ink: #2d0000;
+  --navy: #24344f;
+  --dark: #2b2a2a;
 }
 
-.upload-section input[type="file"] {
-  font-size: 0.85rem;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fafafa;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 3px;
+}
+
+/* Header Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 5vw;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover, nav a[aria-current] {
+  text-decoration: underline;
+}
+
+.maroon {
+  background: var(--ink);
+  color: #fff;
+}
+
+main section {
+  padding: 40px 5vw 64px;
+}
+
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 20px;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+}
+
+.lead {
+  max-width: 60ch;
+  font-size: 1.1rem;
+}
+
+/* Steps Grid */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+  max-width: 1000px;
+}
+
+.steps div {
+  border-top: 2px solid #fff;
+  padding-top: 14px;
+}
+
+.steps b {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+/* Responsive Main Layout Container */
+.invest-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 36px;
+  width: 100%;
+}
+
+/* QR Code */
+.qr-image {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+/* Section Cards Shared Style */
+.container, 
+#planForm, 
+.upload-section {
+  flex: 1 1 300px; /* Expands on desktop, wraps onto new lines on mobile */
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading inside sections */
+.container h2, 
+.invest-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+/* Calculator Box Inputs */
+.container label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.container input {
+  padding: 10px 14px;
+  width: 100%;
+  border: 1px solid var(--maroon);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.container button, 
 .upload-section button {
+  padding: 10px 20px;
   background: var(--navy);
   color: #fff;
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
+  border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
+  width: 100%;
 }
 
+.container button:hover, 
 .upload-section button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
-.upload-section label{
-  color:white;}
-    footer { background: var(--beige); padding: 56px 5vw; text-align: center; color: var(--ink); }
-    footer p { margin: 6px 0; }
 
-    #planForm {
+.output {
+  margin-top: 15px;
+  padding: 12px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  min-height: 20px;
+  font-weight: bold;
+  color: var(--ink);
+}
+
+/* Form & Radio Plan Options */
+#planForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 320px;
 }
 
 .plan-option {
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 10px 14px;
 }
-    
+
 .plan-option:hover {
   border-color: #3b82f6;
+  background: #f1f5f9;
 }
-    
+
 .plan-option label {
   color: #111;
   font-weight: 600;
@@ -180,7 +239,50 @@ upload-section {
 .selected-output:empty {
   display: none;
 }
-    
+
+/* Upload Screenshot Section */
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upload-section label {
+  color: var(--ink);
+}
+
+.upload-section input[type="file"] {
+  font-size: 0.9rem;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fafafa;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background: var(--beige);
+  padding: 40px 5vw;
+  text-align: center;
+  color: var(--ink);
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+/* Extra Mobile Adjustments */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  nav {
+    gap: 16px;
+  }
+}
   </style>
 </head>
 <body>
