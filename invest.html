@@ -121,7 +121,7 @@ upload-section {
 }
 
 .upload-section button {
-  background: var(--maroon);
+  background: var(--navy);
   color: #fff;
   border: none;
   padding: 10px 16px;
@@ -137,6 +137,70 @@ upload-section {
   color:white;}
     footer { background: var(--beige); padding: 56px 5vw; text-align: center; color: var(--ink); }
     footer p { margin: 6px 0; }
+
+    /* Container spacing and overall layout */
+#planForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 400px;
+  margin: 20px 0;
+}
+
+/* Individual plan card style */
+.plan-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Highlight box when hovering over an option */
+.plan-option:hover {
+  border-color: #3b82f6;
+  background-color: #f8fafc;
+}
+
+/* Style for the radio inputs */
+.plan-option input[type="radio"] {
+  appearance: auto;
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: #2563eb; /* Custom radio dot color */
+}
+
+/* Style for labels */
+.plan-option label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Dynamic confirmation text styling */
+.selected-output {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  color: #166534;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+/* Hide confirmation container when empty */
+.selected-output:empty {
+  display: none;
+}
   </style>
 </head>
 <body>
@@ -176,6 +240,42 @@ upload-section {
           </div>
           <div class="output" id="output"></div>
         </div>
+        <h2>Select Your Investment Plan</h2>
+
+  <form id="planForm">
+    <div class="plan-option">
+      <input type="radio" id="plan500" name="pricingPlan" value="Starter Plan (₹500)">
+      <label for="plan500">Starter Plan — ₹500</label>
+    </div>
+
+    <div class="plan-option">
+      <input type="radio" id="plan1000" name="pricingPlan" value="Pro Plan (₹1000)">
+      <label for="plan1000">Pro Plan — ₹1000</label>
+    </div>
+
+    <div class="plan-option">
+      <input type="radio" id="plan1500" name="pricingPlan" value="Growth Plan (₹1500)">
+      <label for="plan1500">Growth Plan — ₹1500</label>
+    </div>
+
+     <div class="plan-option">
+      <input type="radio" id="plan2000" name="pricingPlan" value="Growth Plan (₹2000)">
+      <label for="plan2000">Growth Plan — ₹2000</label>
+    </div>
+
+     <div class="plan-option">
+      <input type="radio" id="plan2500" name="pricingPlan" value="Growth Plan (₹2500)">
+      <label for="plan2500">Growth Plan — ₹2500</label>
+    </div>
+
+     <div class="plan-option">
+      <input type="radio" id="plan3000" name="pricingPlan" value="Growth Plan (₹3000)">
+      <label for="plan3000">Growth Plan — ₹3000</label>
+    </div>
+    
+  </form>
+
+  <div id="confirmationMessage" class="selected-output"></div>
         <div class="upload-section">
     <label for="payment-proof"><strong>Upload Payment Screenshot:</strong></label>
     <input type="file" id="payment-proof" name="payment-proof" accept="image/*" required />
@@ -207,6 +307,16 @@ upload-section {
       const outputDiv = document.getElementById("output");
       outputDiv.textContent = "Expected Return: " + (num * 5) + " INR";
     }
+
+    const form = document.getElementById('planForm');
+    const output = document.getElementById('confirmationMessage');
+
+    form.addEventListener('change', (e) => {
+      if (e.target.name === 'pricingPlan') {
+        output.textContent = `You have chosen: ${e.target.value}`;
+      }
+    });
+    
     function submitPayment() {
   const fileInput = document.getElementById("payment-proof");
   if (!fileInput.files || fileInput.files.length === 0) {
