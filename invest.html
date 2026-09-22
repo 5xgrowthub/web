@@ -46,8 +46,17 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.logo-img {
+  height: 42px;               /* Adjust logo height */
+  width: auto;                /* Maintain original aspect ratio */
+  object-fit: contain;
+  mix-blend-mode: multiply;   /* Blends out solid white backgrounds into the dark bar */
+  filter: contrast(110%);      /* Keeps logo crisp */
 }
 
 nav {
@@ -291,7 +300,9 @@ footer p {
 <body>
   <div class="maroon">
     <header>
-      <a class="logo" href="index.html">5X GROWTHUB</a>
+      <a class="logo" href="index.html">
+  <img src="1000244636.jpg" alt="5X Growthub Logo" class="logo-img">
+</a>
       <nav aria-label="Main">
         <a href="index.html">About</a>
         <a href="join.html">Join</a>
