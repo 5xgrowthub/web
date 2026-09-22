@@ -6,7 +6,7 @@
   <title>Invest – Growthhub</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
   <style>
-    :root {
+ :root {
   --beige: #dfe0da;
   --maroon: #800000;
   --ink: #2d0000;
@@ -52,11 +52,10 @@ header {
 }
 
 .logo-img {
-  height: 42px;               /* Adjust logo height */
-  width: auto;                /* Maintain original aspect ratio */
+  height: 44px;
+  width: auto;
   object-fit: contain;
-  mix-blend-mode: multiply;   /* Blends out solid white backgrounds into the dark bar */
- filter: brightness(0) invert(1);     /* Keeps logo crisp */
+  filter: brightness(0) invert(1); /* Turns logo white on dark header */
 }
 
 nav {
@@ -118,7 +117,7 @@ h1 {
   font-size: 1.1rem;
 }
 
-/* Responsive Main Layout Container */
+/* Main Cards Layout Container */
 .invest-content {
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +127,7 @@ h1 {
   width: 100%;
 }
 
-/* QR Code */
+/* QR Code Image */
 .qr-image {
   width: 100%;
   max-width: 320px;
@@ -138,58 +137,59 @@ h1 {
   align-self: flex-start;
 }
 
-/* Section Cards Shared Style */
+/* Unified Card Styling for Calculator and Plan Form */
 .container, 
-#planForm, 
-.upload-section {
-  justify-content: space-between;
-  flex: 1 1 300px; /* Expands on desktop, wraps onto new lines on mobile */
+#planForm {
+  flex: 1 1 300px;
   width: 100%;
   max-width: 100%;
-  padding: 20px;
+  padding: 24px;
   border-radius: 12px;
   background-color: #ffffff;
-  color: var(--ink);
+  color: #1e293b;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-.container{
-  align-items:center;
-/* Heading inside sections */
-.container h2, 
-.invest-content h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-/* Calculator Box Inputs */
+.container h2, 
+#planForm h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1e293b;
+}
+
+/* Calculator Section Styling */
 .container label {
   display: block;
   margin-bottom: 8px;
   font-size: 0.95rem;
-  color: #333;
+  color: #333333;
 }
 
 .container input {
   padding: 10px 14px;
   width: 100%;
-  border: 1px solid var(--maroon);
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 1rem;
   margin-bottom: 12px;
+  background-color: #f8fafc;
 }
 
 .container button, 
 .upload-section button {
   padding: 10px 20px;
   background: var(--navy);
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
   width: 100%;
+  transition: background 0.2s;
 }
 
 .container button:hover, 
@@ -200,20 +200,18 @@ h1 {
 .output {
   margin-top: 15px;
   padding: 12px;
-  background: #f4f4f4;
-  border-radius: 6px;
-  min-height: 20px;
-  font-weight: bold;
-  color: var(--ink);
+  background: #1e293b;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #38bdf8;
+  text-align: center;
 }
 
-/* Form & Radio Plan Options */
-#planForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.output:empty {
+  display: none;
 }
 
+/* Radio Button Options Styling */
 .plan-option {
   display: flex;
   align-items: center;
@@ -221,6 +219,8 @@ h1 {
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 10px 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .plan-option:hover {
@@ -228,19 +228,25 @@ h1 {
   background: #f1f5f9;
 }
 
+.plan-option input[type="radio"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--navy);
+}
+
 .plan-option label {
-  color: #111;
+  color: #1e293b;
   font-weight: 600;
   cursor: pointer;
-  margin-left: 8px;
+  margin-left: 10px;
   width: 100%;
 }
 
 .selected-output {
-  margin-top: 15px;
+  margin-top: 12px;
   padding: 12px;
   background-color: #1e293b;
-  border: 1px solid #334155;
   border-radius: 8px;
   color: #38bdf8;
   font-weight: 600;
@@ -251,17 +257,18 @@ h1 {
   display: none;
 }
 
-/* Upload Screenshot Section */
+/* Upload Payment Screenshot Section */
 .upload-section {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: center;
-  text-align: center;
+  margin-top: 24px;
+  max-width: 400px;
 }
 
 .upload-section label {
-  color: var(--ink);
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .upload-section input[type="file"] {
@@ -273,7 +280,7 @@ h1 {
   width: 100%;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
   background: var(--beige);
   padding: 40px 5vw;
@@ -285,7 +292,7 @@ footer p {
   margin: 6px 0;
 }
 
-/* Extra Mobile Adjustments */
+/* Mobile Adjustments */
 @media (max-width: 600px) {
   header {
     flex-direction: column;
@@ -295,7 +302,7 @@ footer p {
   nav {
     gap: 16px;
   }
-}
+}  
   </style>
 </head>
 <body>
@@ -337,9 +344,9 @@ footer p {
           </div>
           <div class="output" id="output"></div>
         </div>
-        <h2>Select Your Investment Plan</h2>
 
   <form id="planForm">
+<h2>Select Your Investment Plan</h2>
     <div class="plan-option">
       <input type="radio" id="plan500" name="pricingPlan" value="Starter Plan (₹500)">
       <label for="plan500">Starter Plan — ₹500</label>
