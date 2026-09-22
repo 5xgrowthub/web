@@ -309,8 +309,7 @@ footer p {
   <div class="maroon">
     <header>
       <a class="logo" href="index.html">
-  <img src="Gemini_Generated_Image_r7z1dor7z1dor7z1.png" alt="5X Growthub Logo" class="logo-img">
-</a>
+  <img src="Gemini_Generated_Image_r7z1dor7z1dor7z1.png" alt="5X Growthub Logo" class="logo-img"></a>
       <nav aria-label="Main">
         <a href="index.html">About</a>
         <a href="join.html">Join</a>
@@ -397,8 +396,8 @@ footer p {
     function getValidNumber() {
       const input = document.getElementById("numInput").value.trim();
       const num = parseInt(input);
-      if (!/^\d+$/.test(input) || isNaN(num) || num < 1000) {
-        alert("Can't process. Minimum 1000 INR is required for investment.");
+      if (!/^\d+$/.test(input) || isNaN(num) || num = 1000|| num=500||num=1500||num=2000||num=2500||num=3000) {
+        alert("Can't process. Minimum 500 INR is required for investment.");
         return null;
       }
       return num;
@@ -408,7 +407,7 @@ footer p {
       const num = getValidNumber();
       if (num === null) return;
       const outputDiv = document.getElementById("output");
-      outputDiv.textContent = "Expected Return: " + (num * 5) + " INR";
+      outputDiv.textContent = "Expected Return: " + (num * 5) + " INR in" + (num/100) +" days";
     }
 
     const form = document.getElementById('planForm');
