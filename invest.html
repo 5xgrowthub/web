@@ -54,7 +54,7 @@ header {
   height: 44px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1); /* Turns logo white on dark header */
+  /* Filter removed to show transparent/original background */
 }
 
 nav {
@@ -307,7 +307,8 @@ footer p {
 <body>
   <div class="maroon">
     <header>
-  <img src="growthub.png" alt="5X Growthub Logo" class="logo-img">
+      <a href="index.html" class="logo">
+  <img src="growthub.png" alt="5X Growthub Logo" class="logo-img"></a>
       <nav aria-label="Main">
         <a href="index.html">About</a>
         <a href="join.html">Join</a>
