@@ -334,7 +334,7 @@ footer p {
 
         <div class="container">
           <h2>How much can you earn after investing?</h2>
-          <label for="numInput">Enter the amount (Minimum 1000 INR)</label>
+          <label for="numInput">Enter the amount (Minimum 500 INR)</label>
           <input type="text" id="numInput" placeholder="e.g. 5000" />
           <div>
             <button onclick="multiply()">Calculate</button>
@@ -391,23 +391,24 @@ footer p {
   </footer>
 
   <script>
-    function getValidNumber() {
-      const input = document.getElementById("numInput").value.trim();
-      const num = parseInt(input);
-      if (!/^\d+$/.test(input) || isNaN(num) || num === 1000|| num===500||num===1500||num===2000||num===2500||num===3000) {
-        alert("Can't process. Minimum 500 INR is required for investment.");
-        return null;
-      }
-      return num;
-    }
+   function getValidNumber() {
+  const input = document.getElementById("numInput").value.trim();
+  const num = parseInt(input, 10);
+  
+  // Checks if the input is a valid number and at least 500
+  if (!/^\d+$/.test(input) || isNaN(num) || num < 500) {
+    alert("Can't process. Minimum 500 INR is required for investment.");
+    return null;
+  }
+  return num;
+}
 
-    function multiply() {
-      const num = getValidNumber();
-      if (num === null) return;
-      const outputDiv = document.getElementById("output");
-      outputDiv.textContent = "Expected Return: " + (num * 5) + " INR in" + (num/100) +" days";
-    }
-
+function multiply() {
+  const num = getValidNumber();
+  if (num === null) return;
+  const outputDiv = document.getElementById("output");
+  outputDiv.textContent = "Expected Return: " + (num * 5) + " INR in " + (num / 100) + " days";
+}
     const form = document.getElementById('planForm');
     const output = document.getElementById('confirmationMessage');
 
