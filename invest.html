@@ -388,7 +388,7 @@ footer p {
     <p>Contact no.: +918961538322</p>
   </footer>
 
-  <script>
+ <script>
   function getValidNumber() {
     const input = document.getElementById("numInput").value.trim();
     const num = parseInt(input, 10);
@@ -426,16 +426,6 @@ footer p {
       }
     });
   });
-  
-    
-    function submitPayment() {
-  const fileInput = document.getElementById("payment-proof");
-  if (!fileInput.files || fileInput.files.length === 0) {
-    alert("Please select a screenshot file before submitting.");
-    return;
-  }
-  alert("Payment proof selected: " + fileInput.files[0].name " submitted successfully.);
-}
-  </script>
+</script>
 </body>
 </html>
