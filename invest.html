@@ -35,14 +35,6 @@ a {
   outline-offset: 3px;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding: 20px 5vw;
-}
 
 .logo {
   display: flex;
@@ -50,11 +42,21 @@ header {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 5vw;
+  background-color: #ffffff; /* Clean white header background */
+}
+
 .logo-img {
   height: 44px;
   width: auto;
   object-fit: contain;
-  /* Filter removed to show transparent/original background */
+  /* Ensure filter is removed so dark text renders clearly on white */
 }
 
 nav {
@@ -306,17 +308,18 @@ footer p {
 </head>
 <body>
   <div class="maroon">
-    <header>
-      <a href="index.html" class="logo">
-  <img src="growthub.png" alt="5X Growthub Logo" class="logo-img"></a>
-      <nav aria-label="Main">
-        <a href="index.html">About</a>
-        <a href="join.html">Join</a>
-        <a href="invest.html" aria-current="page">Invest</a>
-        <a href="contact.html">Contact</a>
-        <a href="faq.html">FAQ</a>
-      </nav>
-    </header>
+       <header>
+        <a href="index.html" class="logo">
+          <img src="growthub.png" alt="5X Growthub Logo" class="logo-img">
+        </a>
+        <nav aria-label="Main">
+          <a href="index.html">About</a>
+          <a href="join.html">Join</a>
+          <a href="invest.html" aria-current="page">Invest</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </header>
   </div>
 
   <main>
@@ -388,7 +391,7 @@ footer p {
 
   <footer>
     <p>Mail to: <a href="mailto:5xgrowthub@gmail.com">5xgrowthub@gmail.com</a></p>
-    <p>Contact no.: +918274849568</p>
+    <p>Contact no.: +918961538322</p>
   </footer>
 
   <script>
