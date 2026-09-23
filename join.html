@@ -20,7 +20,7 @@ header {
   mix-blend-mode: multiply;
 }
 
-nav{display:flex;gap:24px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.95rem}
+nav{display:flex;gap:24px;flex-wrap:wrap}
 nav a {
   text-decoration: none;
   font-size: .95rem;
@@ -64,18 +64,22 @@ textarea{min-height:120px;border-radius:20px;resize:vertical}#ok{margin-top:16px
 footer{background:var(--beige);padding:56px 5vw;text-align:center}footer p{margin:6px 0}
 footer .fine{max-width:80ch;margin:28px auto 0;font-size:.85rem;color:#5a3b3b}
 select{width:100%;font:inherit;color:var(--ink);background:transparent;border:1px solid var(--maroon);border-radius:24px;padding:12px 18px}#pd div{display:flex;gap:12px;padding:6px 0;border-bottom:1px solid #ddd}#pd dt{width:130px;color:#6b4a4a}#pd dd{margin:0}</style></head>
-<body><div class="dark"><header>
-  <a href="index.html" class="logo">
-    <img src="1000244636.jpg" alt="5X Growthub Logo" class="logo-img">
-  </a>
-  <nav aria-label="Main">
-    <a href="index.html">About</a>
-    <a href="join.html">Join</a>
-    <a href="invest.html">Invest</a>
-    <a href="contact.html">Contact</a>
-    <a href="faq.html">FAQ</a>
-  </nav>
-</header><main><section class="dark"><div class="join"><p>Build your savings steadily, with a strategy you understand.</p><a class="btn light" href="#profile">Join now</a></div>
+<body>
+  <div class="dark">
+    <header>
+      <a href="index.html" class="logo">
+        <img src="1000244636.jpg" alt="5X Growthub Logo" class="logo-img">
+      </a>
+      <nav aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="join.html" aria-current="page">Join</a>
+        <a href="invest.html">Invest</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </header>
+    <main>
+      <section class="dark"><div class="join"><p>Build your savings steadily, with a strategy you understand.</p><a class="btn light" href="#profile">Join now</a></div>
 <div class="ticker" aria-hidden="true"><span>Invest here &nbsp; Invest here &nbsp; Invest here &nbsp; Invest here &nbsp;</span><span>Invest here &nbsp; Invest here  &nbsp; Invest here &nbsp; Invest here &nbsp;</span></div></section><section class="beige" id="profile"><div style="max-width:640px;margin:0 auto"><h2>Create your profile</h2>
 <p>Tell us a little about yourself so we can suggest a suitable plan. You can change any of this later.</p>
 <form id="pf" action="invest.html" method="GET"><span class="lab">Full name <small>(required)</small></span>
