@@ -395,11 +395,10 @@ footer p {
   const input = document.getElementById("numInput").value.trim();
   const num = parseInt(input, 10);
   
-  // Checks if the input is a valid number and at least 500
-  if (!/^\d+$/.test(input) || isNaN(num) || num < 500) {
-    alert("Can't process. Minimum 500 INR is required for investment.");
-    return null;
-  }
+if (!/^\d+$/.test(input) || isNaN(num) || num === 1000 || num === 500 || num === 1500 || num === 2000 || num === 2500 || num === 3000) {
+  alert("Can't process. Minimum 500 INR is required for investment.");
+  return null;
+}
   return num;
 }
 
