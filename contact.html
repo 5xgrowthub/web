@@ -3,8 +3,22 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
 a{color:inherit}:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 24px;padding:20px 5vw}
-.logo{font-size:1.5rem;text-decoration:none}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 5vw;
+  background-color: #ffffff;
+}
+
+.logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
 nav{display:flex;gap:24px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.95rem}
 nav a:hover,nav a[aria-current]{text-decoration:underline}
 .beige{background:var(--beige)}.dark{background:var(--dark);color:#fff}.maroon{background:var(--ink);color:#fff}
@@ -44,7 +58,18 @@ img{max-width: 100%;height: auto;display: block}
 footer{background:var(--beige);padding:56px 5vw;text-align:center}footer p{margin:6px 0}
 footer .fine{max-width:80ch;margin:28px auto 0;font-size:.85rem;color:#5a3b3b}
 </style></head>
-<body><div class="beige"><header><a class="logo" href="index.html">5X GROWTHUB</a><nav aria-label="Main"><a href="index.html">About</a><a href="join.html">Join</a><a href="invest.html">Invest</a><a href="contact.html" aria-current="page">Contact</a><a href="faq.html">FAQ</a></nav></header></div><main><section class="beige"><div class="contact"><div><h1>Ready to start a conversation?</h1><p>Fill out the form and we will reply within two working days.</p>
+<body><div class="beige"><header>
+  <a href="index.html" class="logo">
+    <img src="1000244636.jpg" alt="5X Growthub Logo" class="logo-img">
+  </a>
+  <nav aria-label="Main">
+    <a href="index.html">About</a>
+    <a href="join.html">Join</a>
+    <a href="invest.html">Invest</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+</header></div><main><section class="beige"><div class="contact"><div><h1>Ready to start a conversation?</h1><p>Fill out the form and we will reply within two working days.</p>
 <form id="f"><span class="lab">Name</span><div class="row"><label for="fn">First name <small>(required)</small><input id="fn" required></label><label for="ln">Last name <small>(required)</small><input id="ln" required></label></div>
 <label for="em">Email <small>(required)</small></label><input id="em" type="email" required><label for="ms">Message <small>(required)</small></label><textarea id="ms" required></textarea>
 <p style="margin-top:20px"><button class="btn" type="submit">Send</button></p><p id="ok" role="status"></p></form></div>
