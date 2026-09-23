@@ -307,8 +307,7 @@ footer p {
 <body>
   <div class="maroon">
     <header>
-      <a class="logo" href="index.html">
-  <img src="growthub.png" alt="5X Growthub Logo" class="logo-img"></a>
+  <img src="growthub.png" alt="5X Growthub Logo" class="logo-img">
       <nav aria-label="Main">
         <a href="index.html">About</a>
         <a href="join.html">Join</a>
@@ -395,7 +394,7 @@ footer p {
     function getValidNumber() {
       const input = document.getElementById("numInput").value.trim();
       const num = parseInt(input);
-      if (!/^\d+$/.test(input) || isNaN(num) || num = 1000|| num=500||num=1500||num=2000||num=2500||num=3000) {
+      if (!/^\d+$/.test(input) || isNaN(num) || num === 1000|| num===500||num===1500||num===2000||num===2500||num===3000) {
         alert("Can't process. Minimum 500 INR is required for investment.");
         return null;
       }
