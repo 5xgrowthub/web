@@ -3,8 +3,23 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
 a{color:inherit}:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 24px;padding:20px 5vw}
-.logo{font-size:1.5rem;text-decoration:none}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 5vw;
+  background-color: #ffffff; /* White background for the header bar */
+}
+
+.logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply; /* Blends away the white JPG background */
+}
 nav{display:flex;gap:24px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.95rem}
 nav a:hover,nav a[aria-current]{text-decoration:underline}
 .beige{background:var(--beige)}.dark{background:var(--dark);color:#fff}.maroon{background:var(--ink);color:#fff}
@@ -44,7 +59,18 @@ textarea{min-height:120px;border-radius:20px;resize:vertical}#ok{margin-top:16px
 footer{background:var(--beige);padding:56px 5vw;text-align:center}footer p{margin:6px 0}
 footer .fine{max-width:80ch;margin:28px auto 0;font-size:.85rem;color:#5a3b3b}
 </style></head>
-<body><div class="beige"><header><a class="logo" href="index.html">5X GROWTHUB</a><nav aria-label="Main"><a href="index.html" aria-current="page">About</a><a href="join.html">Join</a><a href="invest.html">Invest</a><a href="contact.html">Contact</a><a href="faq.html">FAQ</a></nav></header></div><main><section class="beige"><h1 class="big">Multiplier</h1><p class="lead"><strong>Clear guidance for long-term investors.</strong></p><p class="lead">We help first-time and experienced investors understand markets, set goals and choose a plan that fits their risk comfort. </p></section><section style="padding-top:0"><div style="max-width:900px;margin:0 auto"><video controls playsinline preload="metadata" style="width:100%;height:auto;display:block;background:#000" aria-label="Introduction to Growthhub" src="1000236453.mp4"></video></div></section><div class="wedge"></div>
+<body><header>
+        <a href="index.html" class="logo">
+          <img src="1000244636.jpg" alt="5X Growthub Logo" class="logo-img">
+        </a>
+        <nav aria-label="Main">
+          <a href="index.html">About</a>
+          <a href="join.html">Join</a>
+          <a href="invest.html" aria-current="page">Invest</a>
+          <a href="contact.html">Contact</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </header><h1 class="big">Multiplier</h1><p class="lead"><strong>Clear guidance for long-term investors.</strong></p><p class="lead">We help first-time and experienced investors understand markets, set goals and choose a plan that fits their risk comfort. </p></section><section style="padding-top:0"><div style="max-width:900px;margin:0 auto"><video controls playsinline preload="metadata" style="width:100%;height:auto;display:block;background:#000" aria-label="Introduction to Growthhub" src="1000236453.mp4"></video></div></section><div class="wedge"></div>
 <section style="padding-bottom:72px"><div class="carousel"><button class="arrow prev" aria-label="Previous slide">←</button>
 <div class="slide on"><h2>Big ideas, sensible steps.</h2><a class="btn" href="join.html">Get started</a></div>
 <div class="slide"><h2>Start investing with a plan.</h2><a class="btn" href="invest.html">See how it works</a></div>
