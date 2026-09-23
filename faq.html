@@ -3,12 +3,26 @@
 *,*::before,*::after{box-sizing:border-box}
 body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
 a{color:inherit}:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 24px;padding:20px 5vw}
-.logo{font-size:1.5rem;text-decoration:none}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px 5vw;
+  background-color: #ffffff; /* Must be pure white for mix-blend-mode to blend the background */
+}
+
+.logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply; /* Removes the white JPG background cutout */
+}
 nav{display:flex;gap:24px;flex-wrap:wrap}nav a{text-decoration:none;font-size:.95rem}
 nav a:hover,nav a[aria-current]{text-decoration:underline}
 .beige{background:var(--beige)}.dark{background:var(--dark);color:#fff}.maroon{background:var(--ink);color:#fff}
-main section{padding:56px 5vw 88px}
+
 h1,h2{font-weight:400;line-height:1.05;margin:0 0 20px}
 h1{font-size:clamp(2.4rem,7vw,5rem)}h2{font-size:clamp(2rem,5vw,3.4rem)}
 .big{font-size:clamp(3rem,9vw,6.5rem);font-weight:900;color:var(--maroon);letter-spacing:-.02em}
@@ -44,7 +58,19 @@ textarea{min-height:120px;border-radius:20px;resize:vertical}#ok{margin-top:16px
 footer{background:var(--beige);padding:56px 5vw;text-align:center}footer p{margin:6px 0}
 footer .fine{max-width:80ch;margin:28px auto 0;font-size:.85rem;color:#5a3b3b}
 </style></head>
-<body><div class=""><header><a class="logo" href="index.html">5X GROWTHUB</a><nav aria-label="Main"><a href="index.html">About</a><a href="join.html">Join</a><a href="invest.html">Invest</a><a href="contact.html">Contact</a><a href="faq.html" aria-current="page">FAQ</a></nav></header></div><main><section><div class="faq"><h1>Straight answers.</h1>
+<body><div class=""><header>
+  <a href="index.html" class="logo">
+    <img src="1000244636.jpg" alt="5X Growthub Logo" class="logo-img">
+  </a>
+  <nav aria-label="Main">
+    <a href="index.html">About</a>
+    <a href="join.html">Join</a>
+    <a href="invest.html">Invest</a>
+    <a href="contact.html">Contact</a>
+    <a href="faq.html">aria-current="page">FAQ/a>
+  </nav>
+</header>
+  <h1>Straight answers.</h1>
 <div class="q"><span>1</span><h3>How quickly will I see results?</h3><p>Investing is long-term. Markets rise and fall, and we cannot say when or by how much. We can show you how your plan is built.</p></div>
 <div class="q"><span>2</span><h3>What makes our approach different?</h3><p>Plain language, transparent fees and a written risk disclosure before you invest anything.</p></div>
 <div class="q"><span>3</span><h3>Can the plan change as my goals change?</h3><p>Yes. You can review and adjust your plan whenever your income, goals or risk comfort change.</p></div>
