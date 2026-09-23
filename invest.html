@@ -388,13 +388,12 @@ footer p {
     <p>Contact no.: +918961538322</p>
   </footer>
 
- <script>
+<script>
   function getValidNumber() {
     const input = document.getElementById("numInput").value.trim();
-    const num = parseInt(input, 10);
-    
-    // Check if input is a valid number and at least 500
-    if (!/^\d+$/.test(input) || isNaN(num) || num < 500) {
+    const num = parseFloat(input);
+
+    if (isNaN(num) || num < 500) {
       alert("Can't process. Minimum 500 INR is required for investment.");
       return null;
     }
@@ -405,27 +404,41 @@ footer p {
     const num = getValidNumber();
     if (num === null) return;
 
-    // Get selected radio plan if any is checked
     const selectedPlan = document.querySelector('input[name="pricingPlan"]:checked');
     const outputDiv = document.getElementById("output");
-
-    let message = "Expected Return: " + (num * 5) + " INR in " + (num / 100) + " days";
+    
+    let returns = num * 5;
+    let days = num / 100;
+    
+    let message = "Expected Return: ₹" + returns + " in " + days + " days";
     if (selectedPlan) {
-      message += " (Selected: " + selectedPlan.value + ")";
+      message += " (" + selectedPlan.value + ")";
     }
 
+    outputDiv.style.display = "block";
     outputDiv.textContent = message;
   }
 
-  // Automatically update the input box when a plan radio button is selected
+  // Automatically update input & message when radio button option is clicked
   document.querySelectorAll('input[name="pricingPlan"]').forEach(radio => {
     radio.addEventListener('change', (e) => {
-      const amount = e.target.value.match(/\d+/);
-      if (amount) {
-        document.getElementById("numInput").value = amount[0];
+      const match = e.target.value.match(/\d+/);
+      if (match) {
+        document.getElementById("numInput").value = match[0];
+        multiply();
       }
     });
   });
+
+  // Function to handle proof submission button
+  function submitPayment() {
+    const fileInput = document.getElementById("payment-proof");
+    if (!fileInput.files || fileInput.files.length === 0) {
+      alert("Please upload a payment screenshot first.");
+      return;
+    }
+    alert("Payment screenshot submitted successfully!");
+  }
 </script>
 </body>
 </html>
