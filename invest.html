@@ -49,16 +49,17 @@ header {
   flex-wrap: wrap;
   gap: 16px;
   padding: 20px 5vw;
-  background-color: #ffffff; /* Clean white header background */
+  background-color: #ffffff; /* White background for the header bar */
 }
 
 .logo-img {
   height: 44px;
   width: auto;
   object-fit: contain;
-  /* Ensure filter is removed so dark text renders clearly on white */
+  background: transparent; /* Ensures image transparency shows through */
+  border: none;
 }
-
+    
 nav {
   display: flex;
   gap: 24px;
