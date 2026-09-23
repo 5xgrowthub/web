@@ -4,10 +4,15 @@
 body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
 a{color:inherit}:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
   
-  main section {
-  text-align: left;                  /* Centers headings and inline text */
-  padding: 60px 5vw;                   /* Equal padding on left and right */
+  main {
+  margin-top: 30px;
 }
+
+main section {
+  text-align: center;
+  padding: 60px 5vw;
+}
+  
 header {
   display: flex;
   justify-content: space-between;
@@ -30,7 +35,6 @@ nav a:hover,nav a[aria-current]{text-decoration:underline}
 h1,h2{font-weight:400;line-height:1.05;margin:0 0 20px}
 h1{font-size:clamp(2.4rem,7vw,5rem)}h2{font-size:clamp(2rem,5vw,3.4rem)}
 .big{font-size:clamp(3rem,9vw,6.5rem);font-weight:900;color:var(--maroon);letter-spacing:-.02em}
-.lead{max-width:60ch;font-size:1.1rem}
 .btn{display:inline-block;border:0;border-radius:999px;background:var(--navy);color:#fff;font:700 .85rem Roboto,sans-serif;letter-spacing:.06em;text-transform:uppercase;padding:18px 32px;cursor:pointer;text-decoration:none}
 .btn.light{background:#fff;color:var(--ink)}.btn:hover{filter:brightness(1.15)}
 .carousel{position:relative;max-width:1100px;margin:0 auto;padding:0 64px}
